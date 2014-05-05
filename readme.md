@@ -3,7 +3,7 @@ Redis Events
 
 __Inter-process/inter-system event emitter__
 
-Redis event emitter built against the Event Emitter API. It helps scale out code built using event emitters without having to change any app related code (well, a signle line of code!). Simply require `redis-events` instead of `events`.
+Redis event emitter is built against the node.js Event Emitter API. It helps scale out code built using event emitters without having to change any app related code (well, a signle line of code!). Simply require `redis-events` instead of `events`.
 
 
 It supports all the methods exposed by Node's built-in event emitters.
