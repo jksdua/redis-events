@@ -1,0 +1,31 @@
+{
+  "name": "redis-events",
+  "version": "0.0.1",
+  "description": "Event emitter using redis as a data store",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test",
+    "debug-test": "node --debug-brk test"
+  },
+  "keywords": [
+    "redis",
+    "pubsub",
+    "events",
+    "event-emitter",
+    "event emitter"
+  ],
+  "author": "Jaap Karan Singh",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jksdua/redis-events.git"
+  },
+  "devDependencies": {
+    "mocha": "~1.18.2",
+    "require-dir": "~0.1.0"
+  },
+  "dependencies": {
+    "redis": "~0.10.1",
+    "debug": "~0.8.1"
+  }
+}
