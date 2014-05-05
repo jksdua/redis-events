@@ -20,10 +20,7 @@
     "type": "git",
     "url": "git://github.com/jksdua/redis-events.git"
   },
-  "devDependencies": {
-    "mocha": "~1.18.2",
-    "require-dir": "~0.1.0"
-  },
+  "devDependencies": {},
   "dependencies": {
     "redis": "~0.10.1",
     "debug": "~0.8.1"
