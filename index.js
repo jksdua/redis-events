@@ -8,9 +8,9 @@ var slice = Array.prototype.slice;
 var EventEmitter = require('events').EventEmitter;
 
 function extend(destination, source) {
-	for (var i in source) {
+	Object.keys(source).forEach(function(i) {
 		destination[i] = destination[i] || source[i];
-	}
+	});
 	return destination;
 }
 
@@ -118,7 +118,7 @@ proto.on = proto.addListener;
 	Adds redis subscriber, then proxies to event emitter
  */
 proto.once = function(event, listener) {
-	debug('Adding one timer listener for %s', event);
+	debug('Adding one time listener for %s', event);
 	this._subscribe(event);
 	EventEmitter.prototype.once.call(this, event, listener);
 };
