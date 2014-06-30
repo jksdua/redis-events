@@ -85,14 +85,13 @@ proto._subscribe = function(event) {
 	if (!this.subscriber) {
 		debug('Creating subscriber');
 		this.subscriber = this.createClient();
+		// add a listener for incoming messages and emit them to local listeners
+		this._emitLocally();
 
 		// listen for new subscribe event on redis client and adds a message handler for that event
 		this.subscriber.on('subscribe', function(event) {
 			debug('New subscription for event: %s', event);
-
-			// add event handler that calls all the listeners when the event is emitted
-			this._emit(event);
-		}.bind(this));
+		});
 	}
 
 	// only subscribes once
@@ -126,11 +125,11 @@ proto.once = function(event, listener) {
 /**
 	Emits an event to all the in-process attached listeners
  */
-proto._emit = function(event) {
-	this.subscriber.on('message', function(sameAsEvent, msg) {
+proto._emitLocally = function() {
+	this.subscriber.on('message', function(event, msg) {
 		var args = null, error = null;
 
-		debug('Received message - event: %s, msg: %s', sameAsEvent, msg);
+		debug('Received message - event: %s, msg: %s', event, msg);
 
 		try {
 			args = JSON.parse(msg);
