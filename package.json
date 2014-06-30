@@ -1,6 +1,6 @@
 {
   "name": "redis-events",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Event emitter using redis as a data store",
   "main": "index.js",
   "scripts": {

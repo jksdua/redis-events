@@ -76,5 +76,9 @@ The data structure of arguments passed needs to be supported by both `JSON.strin
 Changelog
 ---------
 
+### v0.0.2
+- Fix for issue #2
+- Added tests
+
 ### v0.0.1
 - Initial commit
